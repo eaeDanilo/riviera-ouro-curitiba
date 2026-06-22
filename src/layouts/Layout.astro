@@ -1,0 +1,93 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  cidade: string;
+  estado: string;
+  telefoneRaw: string;
+  endereco: string;
+  complemento: string;
+  cep: string;
+  geoLat: number;
+  geoLng: number;
+  instagram: string;
+  horario: {
+    diasSemana: string[];
+    abre: string;
+    fecha: string;
+  };
+}
+
+const { title, description, canonical, ogImage, cidade, estado, telefoneRaw, endereco, complemento, cep, geoLat, geoLng, instagram, horario } = Astro.props;
+
+const schemaOrg = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Riviera – Compra de Ouro e Acessórios",
+  "description": `Compra de ouro em ${cidade} com a melhor cotação. Avaliação gratuita e pagamento imediato.`,
+  "url": canonical,
+  "telephone": telefoneRaw,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": `${endereco}, ${complemento}`,
+    "addressLocality": cidade,
+    "addressRegion": estado,
+    "postalCode": cep,
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": geoLat,
+    "longitude": geoLng
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": horario.diasSemana,
+    "opens": horario.abre,
+    "closes": horario.fecha
+  },
+  "sameAs": [instagram]
+});
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Riviera - Compra de Ouro e Acessórios" />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:url" content={canonical} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={schemaOrg} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
