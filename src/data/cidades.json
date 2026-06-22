@@ -104,9 +104,9 @@
     "whatsappLink": "https://whatsa.me/5541984273191",
     "instagram": "https://www.instagram.com/rivieraourocuritiba/",
     "instagramHandle": "@rivieraourocuritiba",
-    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.6!2d-49.2731!3d-25.4284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4150e2af877%3A0x0!2sR.+Jo%C3%A3o+Negr%C3%A3o%2C+731+-+Centro%2C+Curitiba+-+PR%2C+80010-200!5e0!3m2!1spt-BR!2sbr!4v1700000000002",
-    "geoLat": -25.4284,
-    "geoLng": -49.2731,
+    "mapsEmbed": "https://www.google.com/maps?q=-25.4354218,-49.2638617&hl=pt-BR&z=17&output=embed",
+    "geoLat": -25.4354218,
+    "geoLng": -49.2638617,
     "bairrosAtendidos": [
       "Centro", "Água Verde", "Batel", "Rebouças", "Bigorrilho",
       "Portão", "Boqueirão", "Santa Felicidade", "Cajuru", "CIC",
@@ -127,8 +127,8 @@
       "footerTagline": "Compra de ouro e acessórios em Curitiba com segurança e a melhor cotação."
     },
     "schemaGeo": {
-      "latitude": -25.4284,
-      "longitude": -49.2731
+      "latitude": -25.4354218,
+      "longitude": -49.2638617
     },
     "horarioFuncionamento": [
       {
