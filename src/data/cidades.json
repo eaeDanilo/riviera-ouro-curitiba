@@ -95,21 +95,22 @@
     "cidade": "Curitiba",
     "estado": "PR",
     "regiao": "Grande Curitiba",
-    "endereco": "R. XV de Novembro, 700",
-    "complemento": "Sala 304 – Centro",
-    "cep": "80020-310",
+    "endereco": "Rua João Negrão, 731, Centro",
+    "complemento": "Edifício New York Building – Andar 17 – Conjunto 1.706",
+    "cep": "80010-200",
     "bairro": "Centro",
-    "telefone": "(14) 98119-9341",
-    "telefoneRaw": "+5514981199341",
-    "whatsappLink": "https://wa.me/5514981199341?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20ouro%20em%20Curitiba.",
-    "instagram": "https://www.instagram.com/riviera_ourobauru",
-    "instagramHandle": "@riviera_ouro",
-    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.6!2d-49.2731!3d-25.4284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4150e2af877%3A0x0!2sR.+XV+de+Novembro%2C+700+-+Centro%2C+Curitiba+-+PR%2C+80020-310!5e0!3m2!1spt-BR!2sbr!4v1700000000002",
+    "telefone": "(41) 98427-3191",
+    "telefoneRaw": "+5541984273191",
+    "whatsappLink": "https://whatsa.me/5541984273191",
+    "instagram": "https://www.instagram.com/rivieraourocuritiba/",
+    "instagramHandle": "@rivieraourocuritiba",
+    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.6!2d-49.2731!3d-25.4284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce4150e2af877%3A0x0!2sR.+Jo%C3%A3o+Negr%C3%A3o%2C+731+-+Centro%2C+Curitiba+-+PR%2C+80010-200!5e0!3m2!1spt-BR!2sbr!4v1700000000002",
     "geoLat": -25.4284,
     "geoLng": -49.2731,
     "bairrosAtendidos": [
-      "Centro", "Batel", "Água Verde", "Bigorrilho", "Mercês",
-      "Portão", "São Francisco", "Rebouças", "Cristo Rei", "Hugo Lange"
+      "Centro", "Água Verde", "Batel", "Rebouças", "Bigorrilho",
+      "Portão", "Boqueirão", "Santa Felicidade", "Cajuru", "CIC",
+      "São José dos Pinhais", "Pinhais", "Colombo", "Araucária", "Almirante Tamandaré"
     ],
     "seo": {
       "title": "Compra de Ouro em Curitiba | Riviera Ouro",
@@ -121,18 +122,25 @@
       "heroParagrafo": "Atendemos clientes de Curitiba e toda a região metropolitana, com condições especiais para volumes acima de 100g.",
       "especialistaParagrafo": "A Riviera chegou a Curitiba! Somos especialistas em compra de ouro com avaliação gratuita, cotação justa e pagamento na hora. Trabalhamos com correntes, anéis, pulseiras, brincos, relógios e ouro antigo ou quebrado.",
       "especialistaParagrafo2": "Se você deseja vender ouro em Curitiba, conte com um atendimento seguro, discreto e sem enrolação. Nossa equipe está localizada no centro da cidade, de fácil acesso por transporte público.",
-      "ondeParagrafo": "Procurando onde vender ouro em Curitiba com a melhor cotação? A Riviera oferece avaliação gratuita, pagamento imediato em dinheiro e total transparência no processo. Sem agendamento, sem burocracia.",
-      "ondeParagrafo2": "Somos referência em compra de ouro no Paraná, atendendo quem busca o justo pelo seu bem. Nossa loja no centro de Curitiba é de fácil acesso e funciona de segunda a sexta. Venha fazer uma avaliação sem compromisso.",
+      "ondeParagrafo": "Se você procura onde vender ouro em Curitiba com segurança, sigilo e a melhor cotação da região, a Riviera é a escolha ideal. Realizamos avaliações gratuitas e pagamos na hora, garantindo transparência e praticidade em todo o processo.",
+      "ondeParagrafo2": "Somos referência na compra de ouro em Curitiba e Região Metropolitana, oferecendo atendimento reservado, avaliação justa e as melhores condições do mercado. Visite nossa loja e descubra quanto seu ouro realmente vale.",
       "footerTagline": "Compra de ouro e acessórios em Curitiba com segurança e a melhor cotação."
     },
     "schemaGeo": {
       "latitude": -25.4284,
       "longitude": -49.2731
     },
-    "horarioFuncionamento": {
-      "diasSemana": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "abre": "09:00",
-      "fecha": "18:00"
-    }
+    "horarioFuncionamento": [
+      {
+        "diasSemana": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "abre": "09:00",
+        "fecha": "18:00"
+      },
+      {
+        "diasSemana": ["Saturday"],
+        "abre": "09:00",
+        "fecha": "13:00"
+      }
+    ]
   }
 ]

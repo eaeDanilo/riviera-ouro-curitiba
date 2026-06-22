@@ -15,14 +15,12 @@ interface Props {
   geoLat: number;
   geoLng: number;
   instagram: string;
-  horario: {
-    diasSemana: string[];
-    abre: string;
-    fecha: string;
-  };
+  horario: { diasSemana: string[]; abre: string; fecha: string } | { diasSemana: string[]; abre: string; fecha: string }[];
 }
 
 const { title, description, canonical, ogImage, cidade, estado, telefoneRaw, endereco, complemento, cep, geoLat, geoLng, instagram, horario } = Astro.props;
+
+const horarioSpecs = Array.isArray(horario) ? horario : [horario];
 
 const schemaOrg = JSON.stringify({
   "@context": "https://schema.org",
@@ -44,12 +42,12 @@ const schemaOrg = JSON.stringify({
     "latitude": geoLat,
     "longitude": geoLng
   },
-  "openingHoursSpecification": {
+  "openingHoursSpecification": horarioSpecs.map((h) => ({
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": horario.diasSemana,
-    "opens": horario.abre,
-    "closes": horario.fecha
-  },
+    "dayOfWeek": h.diasSemana,
+    "opens": h.abre,
+    "closes": h.fecha
+  })),
   "sameAs": [instagram]
 });
 ---
