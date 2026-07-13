@@ -22,6 +22,9 @@ const { title, description, canonical, ogImage, cidade, estado, telefoneRaw, end
 
 const horarioSpecs = Array.isArray(horario) ? horario : [horario];
 
+// Google Ads: tag apenas na página de Curitiba
+const isCuritiba = cidade === 'Curitiba';
+
 const schemaOrg = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -58,15 +61,19 @@ const schemaOrg = JSON.stringify({
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google tag (gtag.js) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18317984754"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    {isCuritiba && (
+      <>
+        <!-- Google tag (gtag.js) -->
+        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-18317984754"></script>
+        <script is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-      gtag('config', 'AW-18317984754');
-    </script>
+          gtag('config', 'AW-18317984754');
+        </script>
+      </>
+    )}
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Riviera - Compra de Ouro e Acessórios" />
@@ -98,17 +105,19 @@ const schemaOrg = JSON.stringify({
   <body>
     <slot />
 
-    <!-- Conversão Google Ads "Contato": dispara no clique em WhatsApp/telefone -->
-    <script is:inline>
-      document.addEventListener('click', function (e) {
-        var link = e.target.closest('a[href*="wa.me"], a[href*="whatsa.me"], a[href*="api.whatsapp.com"], a[href^="tel:"]');
-        if (!link || typeof gtag !== 'function') return;
-        gtag('event', 'conversion', {
-          'send_to': 'AW-18317984754/WxW0CIT8-c4cEPKH2Z5E',
-          'value': 1.0,
-          'currency': 'BRL'
+    <!-- Conversão Google Ads "Contato": dispara no clique em WhatsApp/telefone (só Curitiba) -->
+    {isCuritiba && (
+      <script is:inline>
+        document.addEventListener('click', function (e) {
+          var link = e.target.closest('a[href*="wa.me"], a[href*="whatsa.me"], a[href*="api.whatsapp.com"], a[href^="tel:"]');
+          if (!link || typeof gtag !== 'function') return;
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18317984754/WxW0CIT8-c4cEPKH2Z5E',
+            'value': 1.0,
+            'currency': 'BRL'
+          });
         });
-      });
-    </script>
+      </script>
+    )}
   </body>
 </html>
