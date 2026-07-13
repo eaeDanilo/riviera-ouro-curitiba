@@ -1,4 +1,16 @@
 ---
-// Redireciona a raiz para a cidade padrão (Curitiba)
-return Astro.redirect('/curitiba', 301);
+// Página raiz: redireciona para a cidade padrão (Curitiba)
 ---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=/curitiba/" />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="/curitiba/" />
+    <title>Riviera – Compra de Ouro em Curitiba</title>
+  </head>
+  <body>
+    <p>Redirecionando… <a href="/curitiba/">Clique aqui se não for redirecionado.</a></p>
+  </body>
+</html>
