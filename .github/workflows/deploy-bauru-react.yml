@@ -1,7 +1,13 @@
-name: Deploy Bauru React (preco R$405)
+name: Deploy Bauru React
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'bauru-assets/**'
+      - '.github/workflows/deploy-bauru-react.yml'
 
 jobs:
   deploy:
