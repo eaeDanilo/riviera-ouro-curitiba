@@ -19,9 +19,10 @@ jobs:
       - name: Enviar JS do Bauru via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.FTP_BAURU_SERVER }}
+          username: ${{ secrets.FTP_BAURU_USERNAME }}
+          password: ${{ secrets.FTP_BAURU_PASSWORD }}
           protocol: ftps
           local-dir: ./bauru-assets/
-          server-dir: ../rivieracompradeouro.com/assets/
+          server-dir: ./assets/
+          log-level: standard
