@@ -1,0 +1,8 @@
+# Cache: HTML, JS e CSS sempre conferem com o servidor antes de usar o cache
+# (resposta 304 rápida se nada mudou). Assim preço/texto novo aparece na
+# próxima visita, sem Ctrl+F5 e sem precisar renomear bundle.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html?|js|mjs|css|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
